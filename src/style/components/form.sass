@@ -1,8 +1,57 @@
+@use '../variables'
 
 .form
     position: absolute
     top: 0
     left: 50%
-    transform: translate(-50%, 50%)
-    width: 80%
-    background: red
+    transform: translate(-50%, 10%)
+    width: 90%
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    text-align: center
+
+    &_title
+        font-size: 28px
+        color: variables.$title-color
+        padding-bottom: 1rem
+
+    &_search
+        display: flex
+        align-items: flex-end
+
+        &_input
+            background: variables.$title-color
+            padding: 1rem 1.5rem
+            border: none
+            border-radius: 15px 0 0 15px
+            width: 90%
+            font-size: 18px
+            font-weight: 400
+            color: variables.$font-primary-color
+
+            &::placeholder
+                color: variables.$font-secondary-color
+                font-weight: 400
+
+        &_icon
+            background: variables.$icon-bg
+            padding: 1.16rem
+            border-radius: 0 15px 15px 0
+
+    &_list
+        background: variables.$title-color
+        border-radius: 15px
+        display: flex
+        flex-direction: column
+        gap: 1.5rem
+        padding: 1.5rem 0
+
+        &_item
+            &_topic
+                text-transform: uppercase
+                color: variables.$font-secondary-color
+                font-size: 11px
+                font-weight: 600
+                letter-spacing: 1px
+                padding-bottom: 1rem
