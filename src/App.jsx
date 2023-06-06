@@ -8,6 +8,7 @@ import MarkerPosition from "./components/MarkerPosition";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 import mobileBgImage from "./images/pattern-bg-mobile.png"
+import desktopBgImage from "./images/pattern-bg-desktop.png"
 import iconArrow from "./images/icon-arrow.svg"
 
 function App() {
@@ -59,7 +60,10 @@ function App() {
 
   return (
     <div className="App">
-      <img className="background" src={mobileBgImage} alt="Background image" />
+      <picture>
+        <source media="(min-width: 1360px)" srcSet={desktopBgImage} />
+        <img className="background" src={mobileBgImage} alt="Background image" />
+      </picture>
       {address && <>
         <section className="form">
           <h1 className='form_title'>IP Address Tracker</h1>
@@ -97,7 +101,7 @@ function App() {
           </ul>
         </section>
 
-        <MapContainer center={[address.location.lat, address.location.lng]} zoom={13} scrollWheelZoom={true} style={{height: "500px", width: "100vw", zIndex:0}}>
+        <MapContainer center={[address.location.lat, address.location.lng]} zoom={13} scrollWheelZoom={true} style={{height: "600px", width: "100%", zIndex:0}}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

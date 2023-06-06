@@ -12,14 +12,25 @@
     text-align: center
     z-index: 5
 
+    @media screen and ( min-width: 1360px )
+        align-items: center
+        gap: 2.5rem
+
     &_title
         font-size: 28px
         color: variables.$title-color
         padding-bottom: 1rem
 
+        @media screen and ( min-width: 1360px )
+            padding-bottom: 0
+
     &_search
         display: flex
         align-items: flex-end
+
+        @media screen and ( min-width: 1360px )
+            justify-content: center
+            width: 40%
 
         &_input
             background: variables.$title-color
@@ -35,25 +46,62 @@
                 color: variables.$font-secondary-color
                 font-weight: 400
 
+            @media screen and ( min-width: 1360px )
+                cursor: pointer
+
         &_icon
             border: none
             background: variables.$icon-bg
             padding: 1.16rem
             border-radius: 0 15px 15px 0
 
+            @media screen and ( min-width: 1360px )
+                cursor: pointer
+
+                &:hover
+                    background: variables.$icon-bg-hover
+
     &_list
         background: variables.$title-color
         border-radius: 15px
         display: flex
         flex-direction: column
-        gap: 1.5rem
+        gap: 2rem
         padding: 1.5rem 0
 
+        @media screen and ( min-width: 1360px )
+            width: 90%
+            flex-direction: row
+            align-items: flex-start
+            justify-content: space-around
+            padding: 2rem
+            text-align: start
+
         &_item
+            display: flex
+            flex-direction: column
+            gap: 0.8rem
+
+            @media screen and ( min-width: 1360px )
+                width: 80%
+                height: 60px
+                padding-right: 3rem
+                border-right: 1px solid variables.$font-secondary-color
+
+                &:last-child
+                    border-right: none
+
             &_topic
                 text-transform: uppercase
                 color: variables.$font-secondary-color
                 font-size: 11px
                 font-weight: 600
                 letter-spacing: 1px
-                padding-bottom: 1rem
+
+            &_result
+                font-weight: 600
+                font-size: 20px
+
+                @media screen and ( min-width: 1360px )
+                    font-size: 22px
+                    font-weight: 500
