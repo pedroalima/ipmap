@@ -24,7 +24,7 @@ function App() {
     try {
       const getDataApi = async () => {
         const res = await fetch(
-          `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=192.212.174.101`
+          `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=`
         );
         const jsonRes = await res.json();
         setAddress(jsonRes);
@@ -101,7 +101,10 @@ function App() {
           </ul>
         </section>
 
-        <MapContainer center={[address.location.lat, address.location.lng]} zoom={13} scrollWheelZoom={true} style={{height: "600px", width: "100%", zIndex:0}}>
+        <MapContainer 
+          center={[address.location.lat, address.location.lng]} 
+          zoom={5} scrollWheelZoom={true} 
+          style={{height: "600px", width: "100%", zIndex:0}}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
