@@ -1,9 +1,9 @@
 import "./style/components/app.sass"
-import './style/components/form.sass'
-import 'leaflet/dist/leaflet.css'
+import "./style/components/form.sass"
+import "leaflet/dist/leaflet.css"
 
-import { useState, useEffect } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { useState, useEffect } from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
 import MarkerPosition from "./components/MarkerPosition";
 const apiKey = import.meta.env.VITE_API_KEY;
 
